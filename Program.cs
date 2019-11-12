@@ -5,13 +5,13 @@ using Spire.Pdf;
 
 namespace MergeFiles
 {
-    class MergeFiles
+    internal class MergeFiles
     {
         private static void Main(string[] args)
         {
             if (args.Length != 3)
             {
-                Console.WriteLine("Usage: MergeFiles  Filename1  Filename2");
+                Console.WriteLine("Usage: MergeFiles  InputFile1.pdf  InputFile2.pdf  OutputFile.pdf");
                 return;
             }
 
@@ -22,7 +22,7 @@ namespace MergeFiles
             };
 
             var outputFile = args[2];
-            
+
             var result = PdfDocument.MergeFiles(filesStreams.ToArray());
 
             result.Save(outputFile);
